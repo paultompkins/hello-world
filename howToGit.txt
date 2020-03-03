@@ -1,0 +1,50 @@
+this is a guide on how to link your repository with an computer
+
+step 1
+    Make sure git hub is installed on your computer
+    on linux mint type; sudo apt-get install git
+    and answer yes 
+    to check wether it is installed; git --version
+    to configure git;   git configure --global user.name "YourNmae"
+                        git configure --global user.email "YoyrEmail"
+                        git configure --global core.editor "Name of text editor"
+    to check config; git config --list
+
+step 2
+    open a terminal and type the command ;  ssh-keygen
+    keep pressing enter and leave the fields blank
+
+step 3 
+    type the command ; pastebinit ~/.ssh/id_rsa.pub
+//   (you may need to install the pastebinit package
+//    with the following command ;sudo apt install pastebinit)
+    the last line will be a URL
+    copy this down
+
+step 4
+    open the URL you copied down from the previous step
+    open another tab and log in to your git in a web browser
+    go to "settings"
+    got to "SSH and GPG keys"
+    click on " new ssh key"
+    give it an appropriate name 
+    paste the content from the paste section you recieved 
+    from the genersted URL
+    click save
+
+step 5
+    navigate to the repsoitory you wish to link and type the command;
+    git clone git@github.com:"YourName"/"NameOfRepo".git
+    when prompted
+    "are you sure you want to continue connecting (yes/no)?
+    type ; yes
+
+your repo should now be connected provided you had no errors
+you can test by adding some files and committing wiht a 
+message for example type the commands ;
+    git add "FileName.txt"
+    git commit -m 'your commit message'
+    git push
+
+this should commit and push your file with a comment to your github
+
